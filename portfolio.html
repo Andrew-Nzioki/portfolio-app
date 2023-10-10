@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Portfolio - Adarsha Saula</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="nav-logo">Adarsha Saula</div>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="education.html">Education</a></li>
+          <li><a href="experience.html">Experience</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="career.html">Career</a></li>
+          <li><a href="travel.html">Travel</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="journal.html">Journal</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="burger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="portfolio">
+        <h1>Projects</h1>
+        <div class="project-carousel">
+          <div class="project-slide">
+            <img
+              src="https://images.unsplash.com/photo-1696104236620-ea947677e382?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMzh8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Project 1"
+            />
+            <h2>Project 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="project-slide">
+            <img
+              src="https://images.unsplash.com/photo-1696104236620-ea947677e382?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyMzh8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Project 2"
+            />
+            <h2>Project 2</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+          <div class="project-slide">
+            <img
+              src="https://plus.unsplash.com/premium_photo-1694704421636-b291d5dc7471?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyNDl8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60"
+              alt="Project 3"
+            />
+            <h2>Project 3</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="carousel-buttons">
+          <button id="prev-button" class="carousel-button">Previous</button>
+          <button id="next-button" class="carousel-button">Next</button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="contact-info">
+          <h3>Contact Info</h3>
+          <p>Email: your@email.com</p>
+          <p>Phone: (123) 456-7890</p>
+        </div>
+        <div class="social-links">
+          <h3>Follow Me</h3>
+          <a href="#" class="social-icon">Facebook</a>
+          <a href="#" class="social-icon">Twitter</a>
+          <a href="#" class="social-icon">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+    
+      document.addEventListener("DOMContentLoaded", function () {
+        const projectCarousel = document.querySelector(".project-carousel");
+        const projectSlides = document.querySelectorAll(".project-slide");
+        let currentSlide = 0;
+
+        function showSlide(index) {
+          projectSlides.forEach((slide, i) => {
+            slide.style.display = i === index ? "block" : "none";
+          });
+        }
+
+        function nextSlide() {
+          currentSlide = (currentSlide + 1) % projectSlides.length;
+          showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+          currentSlide =
+            (currentSlide - 1 + projectSlides.length) % projectSlides.length;
+          showSlide(currentSlide);
+        }
+
+     
+        showSlide(currentSlide);
+
+     
+        const prevButton = document.getElementById("prev-button");
+        prevButton.addEventListener("click", prevSlide);
+
+        const nextButton = document.getElementById("next-button");
+        nextButton.addEventListener("click", nextSlide);
+      });
+    </script>
+  </body>
+</html>
